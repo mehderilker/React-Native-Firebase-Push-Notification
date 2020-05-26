@@ -1,6 +1,0 @@
-module Pods_firebasePushNotification_firebasePushNotificationTests {
-  umbrella header "Pods-firebasePushNotification-firebasePushNotificationTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

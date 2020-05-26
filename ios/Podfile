@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'firebasePushNotification' do
-  # Pods for firebasePushNotification
+target 'RNFirebase' do
+  # Pods for RNFirebase
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -72,12 +72,21 @@ target 'firebasePushNotification' do
   pod 'ReactCommon/callinvoker', :path => "../node_modules/react-native/ReactCommon"
   pod 'ReactCommon/turbomodule/core', :path => "../node_modules/react-native/ReactCommon"
   pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga', :modular_headers => true
+  pod 'RNFBMessaging', :path => '../node_modules/@react-native-firebase/messaging'
 
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
 
-  target 'firebasePushNotificationTests' do
+  # Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+
+  # Add the pod for Firebase Cloud Messaging
+  pod 'Firebase/Messaging'
+  
+  target 'RNFirebaseTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +103,10 @@ target 'firebasePushNotification' do
   end
 end
 
-target 'firebasePushNotification-tvOS' do
-  # Pods for firebasePushNotification-tvOS
+target 'RNFirebase-tvOS' do
+  # Pods for RNFirebase-tvOS
 
-  target 'firebasePushNotification-tvOSTests' do
+  target 'RNFirebase-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
